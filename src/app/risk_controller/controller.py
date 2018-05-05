@@ -4,4 +4,4 @@ from http import HTTPStatus
 
 class Risk(object):
     def analysis(self, cpf):
-        return {'CPF': cpf}
+        return {'PARAM': cpf}
