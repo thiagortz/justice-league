@@ -1,7 +1,7 @@
 from http import HTTPStatus
 from flask import Flask
 from .log.logger import Logger
-from .risk_controller.blueprint import RiskBluePrint
+from .client_controller.blueprint import ClientBluePrint
 from app.config import PORT, DEBUG_MODE
 from app.response.response import BaseResponse
 
@@ -19,7 +19,7 @@ class Server:
         self.app.run(host=host, port=port, debug=debug)
 
     def _register_blueprints(self):
-        self.app.register_blueprint(RiskBluePrint().blueprint)
+        self.app.register_blueprint(ClientBluePrint().blueprint)
 
     def _errors_handler(self):
         app = self.app
