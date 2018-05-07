@@ -9,5 +9,5 @@ class ClientBluePrint:
     def __init__(self):
         blueprint = Blueprint('client', __name__, url_prefix=BLUEPRINT_VERSION)
         blueprint.add_url_rule('/client', methods=['POST'],
-                               view_func=Client.as_view('client', schema=Schema(query=Query), graphiql=True))
+                               view_func=Client.as_view('client', schema=Schema(query=Query), graphiql=False))
         self.blueprint = blueprint
