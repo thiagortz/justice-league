@@ -1,11 +1,7 @@
-from flask import request
-from http import HTTPStatus
-from app.service.client import Client
-from app.service.business_delegate import ServiceDelegate
-from app.service.business_service import SMan, TFlash, SolomonG
+from flask_graphql import GraphQLView
 
 
-class Risk(object):
-    def analysis(self, cpf):
-        service = ServiceDelegate(SMan(cpf=cpf))
-        return Client(service).to_call()
+class Risk(GraphQLView):
+
+    def get_middleware(self, request):
+        return self.middleware
