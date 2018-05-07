@@ -1,0 +1,8 @@
+curl -X POST \
+  http://localhost:5000/v1/risk/analysis \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 65b9fc81-c6ed-1271-dbea-4af8d0d0b989' \
+  -d ' {"query":"{score(CPF:\"10256\"){pointing lastQuery}}"}'
+
+
