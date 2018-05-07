@@ -27,29 +27,29 @@ class Server:
         @app.errorhandler(HTTPStatus.BAD_REQUEST)
         def bad_request(error):
             logger.error(error)
-            return {'error': error.description}, HTTPStatus.BAD_REQUEST
+            return {'errors': [{'message': error.description}]}, HTTPStatus.BAD_REQUEST
 
         @app.errorhandler(HTTPStatus.UNAUTHORIZED)
         def unauthorized(error):
             logger.error(error.description)
-            return {'error': error.description}, HTTPStatus.UNAUTHORIZED
+            return {'errors': [{'message': error.description}]}, HTTPStatus.UNAUTHORIZED
 
         @app.errorhandler(HTTPStatus.NOT_FOUND)
         def not_found(error):
             logger.error(error)
-            return {'error': HTTPStatus.NOT_FOUND._name_}, HTTPStatus.NOT_FOUND
+            return {'errors': [{'message': HTTPStatus.NOT_FOUND._name_}]}, HTTPStatus.NOT_FOUND
 
         @app.errorhandler(HTTPStatus.METHOD_NOT_ALLOWED)
         def method_not_allowed(error):
             logger.error(error)
-            return {'error': error.description}, HTTPStatus.METHOD_NOT_ALLOWED
+            return {'errors': [{'message': error.description}]}, HTTPStatus.METHOD_NOT_ALLOWED
 
         @app.errorhandler(HTTPStatus.INTERNAL_SERVER_ERROR)
         def internal_server_error(error):
             logger.error(error)
-            return {'error': HTTPStatus.INTERNAL_SERVER_ERROR._name_}, HTTPStatus.INTERNAL_SERVER_ERROR
+            return {'errors': [{'message': HTTPStatus.INTERNAL_SERVER_ERROR._name_}]}, HTTPStatus.INTERNAL_SERVER_ERROR
 
         @app.errorhandler(Exception)
         def internal_server_error_exception(error):
             logger.error(error)
-            return {'error': HTTPStatus.INTERNAL_SERVER_ERROR._name_}, HTTPStatus.INTERNAL_SERVER_ERROR
+            return {'errors': [{'message': HTTPStatus.INTERNAL_SERVER_ERROR._name_}]}, HTTPStatus.INTERNAL_SERVER_ERROR
