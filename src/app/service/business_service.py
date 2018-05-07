@@ -36,7 +36,7 @@ class TheFlash(BusinessServiceABS):
         self._params = kwargs
 
     def to_call(self):
-        return self._request_get(resource='5af078ad310000540096c676', params=self._params)
+        return self._request_get(resource='5af0bb973100004a0096c74d', params=self._params)
 
     def _request_get(self, resource, params):
         resp = requests.get('{}/{}'.format(self._url_api, resource), params=self._params)

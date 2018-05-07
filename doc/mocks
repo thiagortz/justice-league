@@ -37,9 +37,9 @@ Score
 	}
 
 Event
-	http://www.mocky.io/v2/5af078ad310000540096c676
+	http://www.mocky.io/v2/5af0bb973100004a0096c74d
 
-	{
+{
 
     "id": "15",
     "financial_movement": 68.6,
@@ -50,7 +50,7 @@ Event
         "credit_card":{
             "id": 21,
             "number": "5547-7221-7804-6353",
-            "validity":"07/11/2019"
+            "expiration_date":"07/11/2019"
         }
     }
 
