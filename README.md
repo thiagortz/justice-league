@@ -42,6 +42,6 @@ nosetests --with-coverage --cover-package=src  --cover-inclusive --cover-html
 
 
 #### Postman collection
-[Postman link](https://www.getpostman.com/collections/f12769c5bfdd48dceb41)
+[Postman link](https://www.getpostman.com/collections/260d600d62527c96374e)
 
 

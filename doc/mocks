@@ -1,0 +1,57 @@
+Client
+	http://www.mocky.io/v2/5af076bc3100004d0096c66b
+
+	{
+    "id": "1",
+    "name": "Thiago Dias",
+    "CPF":"59865377691",
+    "birth": "1991-05-21",
+    "address": {
+        "neighborhood":"xxxx",
+        "zipcode":"00000",
+        "city":"xx",
+        "complement":"xx",
+        "state": "xx",
+        "district":"xx",
+        "district_number":"xx",
+        "district_type":"xx",
+        "country":"xx",
+        "region":"xx"
+    },
+    "list_debts":[
+        {
+            "name": "xxx",
+            "value": 1500
+        }
+    ]
+
+}
+
+Score
+	http://www.mocky.io/v2/5af099f2310000610096c6ee
+	{
+
+	    "id": "15",
+	    "pointing": 68.6,
+	    "last_query": "2017-11-22T21:13:28Z"
+	}
+
+Event
+	http://www.mocky.io/v2/5af078ad310000540096c676
+
+	{
+
+    "id": "15",
+    "financial_movement": 68.6,
+    "last_query": "2017-11-22T21:13:28Z",
+    "last_buy":{
+        "id": "15",
+        "value": 60.6,
+        "credit_card":{
+            "id": 21,
+            "number": "5547-7221-7804-6353",
+            "validity":"07/11/2019"
+        }
+    }
+
+}
