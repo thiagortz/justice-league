@@ -21,7 +21,7 @@ First, you need to install the test runner (nosetests)
 pip install -r requirements-dev.txt
 ```
 
-To run all tests, use the test [runner](nosetests) at the root of the project:
+To run all tests, use the test runner at the root of the project:
 To run all the tests, you can use nosetests from the root of project
 
 ```shell
