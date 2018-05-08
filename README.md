@@ -7,7 +7,13 @@
 pip install -r requirements.txt
 ```
 
-## Running Tests
+### Start Application
+
+```shell
+python src/main.py
+```
+
+### Running Tests
 
 First, you need to install the test runner (nosetests)
 
