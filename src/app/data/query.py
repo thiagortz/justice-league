@@ -15,12 +15,13 @@ class Query(ObjectType):
     event = Field(event.Event, CPF=String(required=True))
 
     def resolve_score(self, args, CPF):
-        score = ClientService(ServiceDelegate(SuperMan(CPF=CPF))).to_call()
+        client_service = ClientService(ServiceDelegate(SuperMan(CPF=CPF)))
+        score = client_service.to_call()
 
         if not score.ok:
             abort(HTTPStatus.NOT_FOUND, 'unable to get requested score')
 
-        return json2obj(json.dumps(score.json()))
+        return json2obj(score.text)
 
     def resolve_client(self, agrs, CPF):
 
@@ -40,9 +41,9 @@ class Query(ObjectType):
         if not client.ok or not score.ok or not event.ok:
             abort(HTTPStatus.NOT_FOUND, 'unable to get requested client {}'.format(CPF))
 
-        client_j = client.json()
-        client_j['score'] = score.json()
-        client_j['events'] = [event.json()]
+        client_j = json.loads(client.text)
+        client_j['score'] = json.loads(score.text)
+        client_j['events'] = [json.loads(event.text)]
 
         return json2obj(json.dumps(client_j))
 
@@ -53,4 +54,4 @@ class Query(ObjectType):
         if not event.ok:
             abort(HTTPStatus.NOT_FOUND, 'unable to get requested event')
 
-        return json2obj(json.dumps(event.json()))
+        return json2obj(event.text)

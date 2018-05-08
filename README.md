@@ -41,7 +41,10 @@ nosetests --with-coverage --cover-package=src  --cover-inclusive --cover-html
 ```
 
 
-#### Postman collection
-[Postman link](https://www.getpostman.com/collections/260d600d62527c96374e)
+#### Postman
+[Collection](https://www.getpostman.com/collections/260d600d62527c96374e) <br/>
+[Docs](https://documenter.getpostman.com/view/1939702/justice-league/RW1gEHAp#73460193-cb09-47a8-ad14-aa206ed3e30a)
+
+
 
 
