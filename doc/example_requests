@@ -1,8 +1,21 @@
-curl -X POST \
-  http://localhost:5000/v1/risk/analysis \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -H 'postman-token: 65b9fc81-c6ed-1271-dbea-4af8d0d0b989' \
-  -d ' {"query":"{score(CPF:\"10256\"){pointing lastQuery}}"}'
+Client
+
+curl --request POST \
+  --url http://localhost:5000/v1/client \
+  --header 'content-type: application/json' \
+  --data '{"query":"{\n\tclient(CPF:\"59865377691\"){\n\t\tname\n\t\tbirth\n\t\tCPF\n\t\taddress{\n\t\t\tneighborhood\n\t\t\tzipcode\n\t\t\tcity\n\t\t\tcomplement\n\t\t\tstate\n\t\t\tdistrict\n\t\t\tdistrictNumber\n\t\t\tdistrictType\n\t\t\tcountry\n\t\t\tregion\n\t\t}\n\t\tlistDebts{\n\t\t\tname\n\t\t\tvalue\n\t\t}\n\t\tscore{\n\t\t\tpointing\n\t\t\tlastQuery\n\t\t}\n\t\tevents{\n\t\t\tlastBuy{\n\t\t\t\tvalue\n\t\t\t\tcreditCard{\n\t\t\t\t\tnumber\n\t\t\t\t\texpirationDate\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"}'
+
+Score
+
+  curl --request POST \
+  --url http://localhost:5000/v1/client \
+  --header 'content-type: application/json' \
+  --data '{"query":"{\n\tscore(CPF: \"59865377691\"){\n\t\tpointing\n\t\tlastQuery\n\t}\n\t\n}"}'
 
 
+Event
+
+  curl --request POST \
+  --url http://localhost:5000/v1/client \
+  --header 'content-type: application/json' \
+  --data '{"query":"{event(CPF:\"59865377691\"){\n\t\t\tlastBuy{\n\t\t\t\tvalue\n\t\t\t\tcreditCard{\n\t\t\t\t\tnumber\n\t\t\t\t\texpirationDate\n\t\t\t\t}\n\t\t\t}\n\t\t}\n}"}'

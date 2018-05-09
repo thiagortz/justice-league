@@ -1,7 +1,7 @@
 from .business_service import BusinessServiceABS
 
 
-class ServiceDelegate:
+class ServiceDelegate(object):
     def __init__(self, business_service: BusinessServiceABS):
         self.business_service = business_service
 
