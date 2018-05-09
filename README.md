@@ -42,12 +42,6 @@ Also, you can run only unit tests:
 nosetests tests/unit
 ```
 
-Or integration tests:
-
-```shell
-nosetests tests/integration --nologcapture
-```
-
 To measure test coverage, run the command bellow
 
 ```shell
