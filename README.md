@@ -1,5 +1,7 @@
 # Justice League
 
+### Flow Aplication
+[Click here](https://raw.githubusercontent.com/thiagortz/justice-league/develop/doc/justice-league-flow.jpeg)
 
 ### Installation
 
